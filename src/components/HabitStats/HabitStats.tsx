@@ -67,6 +67,32 @@ const HabitStats: React.FC = () => {
   if (error) {
     return <p>Error fetching habits: {error}</p>;
   }
+  const statsData = [
+    {
+      icon: <EmojiEventsIcon />,
+      title: "Longest Streak",
+      value: `${getLongestStreak()} days`,
+      color1: "#dcfce7",
+      color2: "#bbf7d0",
+      border: "#86efac",
+    },
+    {
+      icon: <TrendingUpIcon />,
+      title: "Today's Completion",
+      value: `${getCompletedToday()}%`,
+      color1: "#dbeafe",
+      color2: "#bfdbfe",
+      border: "#93c5fd",
+    },
+    {
+      icon: <FormatListBulletedIcon />,
+      title: "Total Habits",
+      value: `${habits.length}`,
+      color1: "#f3e8ff",
+      color2: "#e9d5ff",
+      border: "#d8b4fe",
+    },
+  ];
 
   return (
     <div>
@@ -89,36 +115,20 @@ const HabitStats: React.FC = () => {
         <DialogTitle>Habit Statistics</DialogTitle>
         <DialogContent>
           <div className="stats-grid">
-            <div className="stat-card streak-card">
-              <div className="stat-icon">
-                <EmojiEventsIcon />
-              </div>
-              <div className="stat-info">
-                <h3>Longest Streak</h3>
-                <p>{getLongestStreak()} days</p>
-              </div>
-            </div>
-            <div className="stat-card completion-card">
-              <div className="stat-icon">
-                <TrendingUpIcon />
-              </div>
-              <div className="stat-info">
-                <h3>Today's Completion</h3>
-                <p>{getCompletedToday()}%</p>
-              </div>
-            </div>
-            <div className="stat-card total-card">
-              <div className="stat-icon">
-                <FormatListBulletedIcon />
-              </div>
-              <div className="stat-info">
-                <h3>Total Habits</h3>
-                <p>{habits.length}</p>
-              </div>
-            </div>
+            {statsData.map((stat, index) => (
+              <StatCard
+                key={index}
+                icon={stat.icon}
+                title={stat.title}
+                value={stat.value}
+                color1={stat.color1}
+                color2={stat.color2}
+                border={stat.border}
+              />
+            ))}
           </div>
         </DialogContent>
-        <StatCard icon={"symbol"} title={"dadsad"} value={"adsadas"} />
+
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Close

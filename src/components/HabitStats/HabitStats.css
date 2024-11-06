@@ -72,21 +72,6 @@
   transform: translateY(-2px);
 }
 
-.streak-card {
-  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-  border: 1px solid #86efac;
-}
-
-.completion-card {
-  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-  border: 1px solid #93c5fd;
-}
-
-.total-card {
-  background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
-  border: 1px solid #d8b4fe;
-}
-
 .stat-icon {
   width: 40px;
   height: 40px;
