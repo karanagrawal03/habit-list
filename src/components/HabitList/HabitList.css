@@ -1,0 +1,64 @@
+.habit-details{
+    border-radius: 10px;
+    border: 1px solid #c9e1ec;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.button-container{
+    display: flex;
+    gap: 40px;
+}
+.progress{
+    margin: 15px 0px;
+}
+.basic-habit-data{
+    display: flex;
+    gap: 100px;
+}
+.edit-button{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    cursor: pointer;
+}
+.habit-content{
+    display: flex;
+}
+.habit-name{
+    max-width: 100px;
+    word-wrap: break-word;
+}
+.habit-heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+.habit-details:hover .edit-button{
+    opacity: 1;
+}
+.mark-complete-button{
+    width: 207px;
+}
+.bulk-actions{
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    gap: 10px;
+}
+.list-of-habits{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 20px;
+}
+.separator{
+    background-color: #d0d1d9;
+    height: 1.5px;
+    width: 98%;
+    margin:  0 auto;
+}
+.separator:last-child{
+    display: none;
+}
